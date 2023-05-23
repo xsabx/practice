@@ -19,8 +19,8 @@ public class InstitutionController {
      *   |FRONT-END          |DATABASE                           |ADDITIONAL TASK
      *   ----------------------------------------------------------------------------------------------------------------
      *   |name               |institutions.name                  | -
-     *   |regNum             |institutions.regNum                | -
-     *   |regDate            |institutions.regDate               | -
+     *   |regNum             |institutions.reg_num               | -
+     *   |regDate            |institutions.reg_date              | -
      *   |type               |classifiers_translations.text      |atkarīgs no valodas
      *   ----------------------------------------------------------------------------------------------------------------
      */

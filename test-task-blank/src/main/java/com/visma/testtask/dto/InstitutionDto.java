@@ -8,6 +8,23 @@ public class InstitutionDto {
     private LocalDateTime regDate;
     private String type;
 
+    @Override
+    public String toString() {
+        return "InstitutionDto{" +
+                "name='" + name + '\'' +
+                ", regNum='" + regNum + '\'' +
+                ", regDate=" + regDate +
+                ", type='" + type + '\'' +
+                '}';
+    }
+
+    public InstitutionDto(String name, String regNum, LocalDateTime regDate, String type) {
+        this.name = name;
+        this.regNum = regNum;
+        this.regDate = regDate;
+        this.type = type;
+    }
+
     public InstitutionDto() {
     }
 

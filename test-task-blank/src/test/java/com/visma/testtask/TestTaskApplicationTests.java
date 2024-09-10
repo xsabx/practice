@@ -34,6 +34,7 @@ class TestTaskApplicationTests {
     public void all_institutions_are_returned_lv() throws IOException {
         String url = String.join("", baseUrl, "?language=LV");
         List<InstitutionDto> list = executeRequest(url);
+        System.out.println(list);
         Assertions.assertEquals(6, list.size(), "Nepareizs iestāžu skaits");
         list.forEach(l -> {
             Optional<String> o = typesLV.stream().filter(t -> t.equals(l.getType())).findFirst();
@@ -45,6 +46,7 @@ class TestTaskApplicationTests {
     public void all_institutions_are_returned_en() throws IOException {
         String url = String.join("", baseUrl, "?language=EN");
         List<InstitutionDto> list = executeRequest(url);
+        System.out.println(list);
         Assertions.assertEquals(6, list.size(), "Nepareizs iestāžu skaits");
         list.forEach(l -> {
             Optional<String> o = typesEN.stream().filter(t -> t.equals(l.getType())).findFirst();
@@ -56,6 +58,7 @@ class TestTaskApplicationTests {
     public void all_active_are_returned_lv() throws IOException {
         String url = String.join("", baseUrl, "?language=LV", "&status=ACTIVE");
         List<InstitutionDto> list = executeRequest(url);
+        System.out.println(list);
         Assertions.assertEquals(5, list.size(), "Nepareizs iestāžu skaits");
         list.forEach(l -> {
             Optional<String> o = typesLV.stream().filter(t -> t.equals(l.getType())).findFirst();
@@ -67,6 +70,7 @@ class TestTaskApplicationTests {
     public void all_active_are_returned_en() throws IOException {
         String url = String.join("", baseUrl, "?language=EN", "&status=ACTIVE");
         List<InstitutionDto> list = executeRequest(url);
+        System.out.println(list);
         Assertions.assertEquals(5, list.size(), "Nepareizs iestāžu skaits");
         list.forEach(l -> {
             Optional<String> o = typesEN.stream().filter(t -> t.equals(l.getType())).findFirst();
@@ -79,6 +83,7 @@ class TestTaskApplicationTests {
     public void all_inactive_are_returned_lv() throws IOException {
         String url = String.join("", baseUrl, "?language=LV", "&status=INACTIVE");
         List<InstitutionDto> list = executeRequest(url);
+        System.out.println(list);
         Assertions.assertEquals(1, list.size(), "Nepareizs iestāžu skaits");
         InstitutionDto institution = list.get(0);
         Assertions.assertEquals(institution.getName(), "Neaktīva filiāle");
@@ -92,6 +97,7 @@ class TestTaskApplicationTests {
     public void all_inactive_are_returned_en() throws IOException {
         String url = String.join("", baseUrl, "?language=EN", "&status=INACTIVE");
         List<InstitutionDto> list = executeRequest(url);
+        System.out.println(list);
         Assertions.assertEquals(1, list.size(), "Nepareizs iestāžu skaits");
         InstitutionDto institution = list.get(0);
         Assertions.assertEquals(institution.getName(), "Neaktīva filiāle");
